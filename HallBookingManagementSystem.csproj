@@ -217,6 +217,9 @@
       <DependentUpon>CrystalReportPaymentReceipt.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\DataSetHallBookingDB.cs">
+      <DependentUpon>DataSetHallBookingDB.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reports\DataSetHallBookingDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -12,7 +12,7 @@ namespace HallBookingManagementSystem.MyClasses
         public DateTime BookingDate { get; set; }
         public int CustomerId { get; set; }
         public int PackageId { get; set; }
-        public int HallId { get; set; }
+        //public int HallId { get; set; }
         public int BookingTypeId { get; set; }
         public DateTime EventDate { get; set; }
         public string EventName { get; set; }

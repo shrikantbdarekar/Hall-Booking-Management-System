@@ -116,7 +116,7 @@ namespace HallBookingManagementSystem
 
         private void buttonPrintReceipt_Click(object sender, EventArgs e)
         {
-            Reports.FormReportPaymentReceipt frmObj = new Reports.FormReportPaymentReceipt();
+            Reports.FormReportPaymentReceipt frmObj = new Reports.FormReportPaymentReceipt(PaymentId);
             frmObj.ShowDialog();
         }
     }

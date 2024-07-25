@@ -49,7 +49,7 @@ namespace HallBookingManagementSystem
 
         private void dataGridViewCustomers_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dgcEdit.Index || e.ColumnIndex == dgcDelete.Index)
+            if (e.ColumnIndex == dgcEdit.Index || e.ColumnIndex == dgcDelete.Index || e.ColumnIndex==dgcPrint.Index)
             {
                 int PaymentId = Convert.ToInt32(dataGridViewPayments.CurrentRow.Cells[dgcPaymentId.Name].Value);
                 int PaymentAmount = Convert.ToInt32(dataGridViewPayments.CurrentRow.Cells[dgcPaymentAmount.Name].Value);
@@ -69,6 +69,11 @@ namespace HallBookingManagementSystem
                         DALEventBooking.UpdateEventBookingReceivedAmountReset(PaymentId, PaymentAmount);
                     }
                 }
+                else if (e.ColumnIndex == dgcPrint.Index)
+                {
+                    Reports.FormReportPaymentReceipt frmObj = new Reports.FormReportPaymentReceipt(PaymentId);
+                    frmObj.ShowDialog();
+                }
 
                 LoadData();
             }
@@ -76,7 +81,9 @@ namespace HallBookingManagementSystem
 
         private void buttonPrintReceipt_Click(object sender, EventArgs e)
         {
-            Reports.FormReportPaymentReceipt frmObj = new Reports.FormReportPaymentReceipt();
+            //if()
+            int PaymentId = Convert.ToInt32(dataGridViewPayments.CurrentRow.Cells[dgcPaymentId.Name].Value);
+            Reports.FormReportPaymentReceipt frmObj = new Reports.FormReportPaymentReceipt(PaymentId);
             frmObj.ShowDialog();
         }
     }
