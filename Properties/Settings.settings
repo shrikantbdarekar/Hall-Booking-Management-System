@@ -1,0 +1,23 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="HallBookingManagementSystem.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ProjectName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Hall Booking Management System</Value>
+    </Setting>
+    <Setting Name="DesignedDvelopedBy" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Mr. Mark Zuckerberg
+Mr. Sundar Pichai
+Mr. Bill Gates</Value>
+    </Setting>
+    <Setting Name="ConnestionStringFull" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Server=.\\sqlexpress19;Database=HallBookingDb;User Id=sa;Password=sqlexpress@19;</Value>
+    </Setting>
+    <Setting Name="ConnestionStringShort" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Server=.\\sqlexpress19;Database=HallBookingDb;Integrated Security=True;</Value>
+    </Setting>
+    <Setting Name="VenueId" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

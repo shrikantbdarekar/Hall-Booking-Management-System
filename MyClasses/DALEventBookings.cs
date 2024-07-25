@@ -1,0 +1,164 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data.SqlClient;
+
+namespace HallBookingManagementSystem.MyClasses
+{
+    public class DALEventBookings
+    {
+        private string connectionString = MyConnectioString.Value;
+
+        // Get All EventBookings
+        public List<EventBooking> GetAllEventBookings()
+        {
+            List<EventBooking> eventBookings = new List<EventBooking>();
+            string query = "SELECT * FROM EventBookings";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    EventBooking eventBooking = new EventBooking
+                    {
+                        EventBookingId = Convert.ToInt32(reader["EventBookingId"]),
+                        BookingDate = reader["BookingDate"] != DBNull.Value ? Convert.ToDateTime(reader["BookingDate"]) : (DateTime?)null,
+                        CustomerId = Convert.ToInt32(reader["CustomerId"]),
+                        PackageId = Convert.ToInt32(reader["PackageId"]),
+                        HallId = Convert.ToInt32(reader["HallId"]),
+                        BookingTypeId = reader["BookingTypeId"].ToString(),
+                        EventDate = reader["EventDate"] != DBNull.Value ? Convert.ToDateTime(reader["EventDate"]) : (DateTime?)null,
+                        EventName = reader["EventName"].ToString(),
+                        EventTypeId = reader["EventTypeId"].ToString(),
+                        EventDescription = reader["EventDescription"].ToString(),
+                        PersonCount = Convert.ToInt32(reader["PersonCount"]),
+                        Remark = reader["Remark"].ToString(),
+                        PackageAmount = Convert.ToDecimal(reader["PackageAmount"]),
+                        DiscountAmount = reader["DiscountAmount"] != DBNull.Value ? Convert.ToDecimal(reader["DiscountAmount"]) : (decimal?)null,
+                        FinalAmount = reader["FinalAmount"] != DBNull.Value ? Convert.ToDecimal(reader["FinalAmount"]) : (decimal?)null,
+                        ReceivedAmount = reader["ReceivedAmount"] != DBNull.Value ? Convert.ToDecimal(reader["ReceivedAmount"]) : (decimal?)null
+                    };
+                    eventBookings.Add(eventBooking);
+                }
+            }
+            return eventBookings;
+        }
+
+        // Get EventBooking by ID
+        public EventBooking GetEventBookingById(int eventBookingId)
+        {
+            EventBooking eventBooking = null;
+            string query = "SELECT * FROM EventBookings WHERE EventBookingId = @EventBookingId";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@EventBookingId", eventBookingId);
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    eventBooking = new EventBooking
+                    {
+                        EventBookingId = Convert.ToInt32(reader["EventBookingId"]),
+                        BookingDate = reader["BookingDate"] != DBNull.Value ? Convert.ToDateTime(reader["BookingDate"]) : (DateTime?)null,
+                        CustomerId = Convert.ToInt32(reader["CustomerId"]),
+                        PackageId = Convert.ToInt32(reader["PackageId"]),
+                        HallId = Convert.ToInt32(reader["HallId"]),
+                        BookingTypeId = reader["BookingTypeId"].ToString(),
+                        EventDate = reader["EventDate"] != DBNull.Value ? Convert.ToDateTime(reader["EventDate"]) : (DateTime?)null,
+                        EventName = reader["EventName"].ToString(),
+                        EventTypeId = reader["EventTypeId"].ToString(),
+                        EventDescription = reader["EventDescription"].ToString(),
+                        PersonCount = Convert.ToInt32(reader["PersonCount"]),
+                        Remark = reader["Remark"].ToString(),
+                        PackageAmount = Convert.ToDecimal(reader["PackageAmount"]),
+                        DiscountAmount = reader["DiscountAmount"] != DBNull.Value ? Convert.ToDecimal(reader["DiscountAmount"]) : (decimal?)null,
+                        FinalAmount = reader["FinalAmount"] != DBNull.Value ? Convert.ToDecimal(reader["FinalAmount"]) : (decimal?)null,
+                        ReceivedAmount = reader["ReceivedAmount"] != DBNull.Value ? Convert.ToDecimal(reader["ReceivedAmount"]) : (decimal?)null
+                    };
+                }
+            }
+            return eventBooking;
+        }
+
+        // Insert EventBooking
+        public void InsertEventBooking(EventBooking eventBooking)
+        {
+            string query = "INSERT INTO EventBookings (BookingDate, CustomerId, PackageId, HallId, BookingTypeId, EventDate, EventName, EventTypeId, EventDescription, PersonCount, Remark, PackageAmount, DiscountAmount, FinalAmount, ReceivedAmount) VALUES (@BookingDate, @CustomerId, @PackageId, @HallId, @BookingTypeId, @EventDate, @EventName, @EventTypeId, @EventDescription, @PersonCount, @Remark, @PackageAmount, @DiscountAmount, @FinalAmount, @ReceivedAmount)";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@BookingDate", eventBooking.BookingDate.HasValue ? (object)eventBooking.BookingDate.Value : DBNull.Value);
+                cmd.Parameters.AddWithValue("@CustomerId", eventBooking.CustomerId);
+                cmd.Parameters.AddWithValue("@PackageId", eventBooking.PackageId);
+                cmd.Parameters.AddWithValue("@HallId", eventBooking.HallId);
+                cmd.Parameters.AddWithValue("@BookingTypeId", eventBooking.BookingTypeId);
+                cmd.Parameters.AddWithValue("@EventDate", eventBooking.EventDate.HasValue ? (object)eventBooking.EventDate.Value : DBNull.Value);
+                cmd.Parameters.AddWithValue("@EventName", eventBooking.EventName);
+                cmd.Parameters.AddWithValue("@EventTypeId", eventBooking.EventTypeId);
+                cmd.Parameters.AddWithValue("@EventDescription", eventBooking.EventDescription ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@PersonCount", eventBooking.PersonCount);
+                cmd.Parameters.AddWithValue("@Remark", eventBooking.Remark ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@PackageAmount", eventBooking.PackageAmount);
+                cmd.Parameters.AddWithValue("@DiscountAmount", eventBooking.DiscountAmount.HasValue ? (object)eventBooking.DiscountAmount.Value : DBNull.Value);
+                cmd.Parameters.AddWithValue("@FinalAmount", eventBooking.FinalAmount.HasValue ? (object)eventBooking.FinalAmount.Value : DBNull.Value);
+                cmd.Parameters.AddWithValue("@ReceivedAmount", eventBooking.ReceivedAmount.HasValue ? (object)eventBooking.ReceivedAmount.Value : DBNull.Value);
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        // Update EventBooking
+        public void UpdateEventBooking(EventBooking eventBooking)
+        {
+            string query = "UPDATE EventBookings SET BookingDate = @BookingDate, CustomerId = @CustomerId, PackageId = @PackageId, HallId = @HallId, BookingTypeId = @BookingTypeId, EventDate = @EventDate, EventName = @EventName, EventTypeId = @EventTypeId, EventDescription = @EventDescription, PersonCount = @PersonCount, Remark = @Remark, PackageAmount = @PackageAmount, DiscountAmount = @DiscountAmount, FinalAmount = @FinalAmount, ReceivedAmount = @ReceivedAmount WHERE EventBookingId = @EventBookingId";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@EventBookingId", eventBooking.EventBookingId);
+                cmd.Parameters.AddWithValue("@BookingDate", eventBooking.BookingDate.HasValue ? (object)eventBooking.BookingDate.Value : DBNull.Value);
+                cmd.Parameters.AddWithValue("@CustomerId", eventBooking.CustomerId);
+                cmd.Parameters.AddWithValue("@PackageId", eventBooking.PackageId);
+                cmd.Parameters.AddWithValue("@HallId", eventBooking.HallId);
+                cmd.Parameters.AddWithValue("@BookingTypeId", eventBooking.BookingTypeId);
+                cmd.Parameters.AddWithValue("@EventDate", eventBooking.EventDate.HasValue ? (object)eventBooking.EventDate.Value : DBNull.Value);
+                cmd.Parameters.AddWithValue("@EventName", eventBooking.EventName);
+                cmd.Parameters.AddWithValue("@EventTypeId", eventBooking.EventTypeId);
+                cmd.Parameters.AddWithValue("@EventDescription", eventBooking.EventDescription ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@PersonCount", eventBooking.PersonCount);
+                cmd.Parameters.AddWithValue("@Remark", eventBooking.Remark ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@PackageAmount", eventBooking.PackageAmount);
+                cmd.Parameters.AddWithValue("@DiscountAmount", eventBooking.DiscountAmount.HasValue ? (object)eventBooking.DiscountAmount.Value : DBNull.Value);
+                cmd.Parameters.AddWithValue("@FinalAmount", eventBooking.FinalAmount.HasValue ? (object)eventBooking.FinalAmount.Value : DBNull.Value);
+                cmd.Parameters.AddWithValue("@ReceivedAmount", eventBooking.ReceivedAmount.HasValue ? (object)eventBooking.ReceivedAmount.Value : DBNull.Value);
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        // Delete EventBooking
+        public void DeleteEventBooking(int eventBookingId)
+        {
+            string query = "DELETE FROM EventBookings WHERE EventBookingId = @EventBookingId";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@EventBookingId", eventBookingId);
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+    }
+ }

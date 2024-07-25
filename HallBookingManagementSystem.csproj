@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DE0F5A0F-B431-41C5-B400-EFA96AA22DBF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HallBookingManagementSystem</RootNamespace>
+    <AssemblyName>HallBookingManagementSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormBookingPackage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBookingPackage.Designer.cs">
+      <DependentUpon>FormBookingPackage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBookingPackageSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBookingPackageSearch.Designer.cs">
+      <DependentUpon>FormBookingPackageSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPaymentSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPaymentSearch.Designer.cs">
+      <DependentUpon>FormPaymentSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPayment.Designer.cs">
+      <DependentUpon>FormPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEventBookingSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEventBookingSearch.Designer.cs">
+      <DependentUpon>FormEventBookingSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEventBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEventBooking.Designer.cs">
+      <DependentUpon>FormEventBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCustomerSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCustomerSearch.Designer.cs">
+      <DependentUpon>FormCustomerSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCustomer.Designer.cs">
+      <DependentUpon>FormCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHall.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHall.Designer.cs">
+      <DependentUpon>FormHall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHallSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHallSearch.Designer.cs">
+      <DependentUpon>FormHallSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUserSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUserSearch.Designer.cs">
+      <DependentUpon>FormUserSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUser.Designer.cs">
+      <DependentUpon>FormUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEventTypeSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEventTypeSearch.Designer.cs">
+      <DependentUpon>FormEventTypeSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEventType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEventType.Designer.cs">
+      <DependentUpon>FormEventType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBookingTypeSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBookingTypeSearch.Designer.cs">
+      <DependentUpon>FormBookingTypeSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMDI.Designer.cs">
+      <DependentUpon>FormMDI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBookingType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBookingType.Designer.cs">
+      <DependentUpon>FormBookingType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVenueDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVenueDetails.Designer.cs">
+      <DependentUpon>FormVenueDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyClasses\DALBookingPackages.cs" />
+    <Compile Include="MyClasses\DALBookingTypes.cs" />
+    <Compile Include="MyClasses\DALCustomers.cs" />
+    <Compile Include="MyClasses\DALEventBookings.cs" />
+    <Compile Include="MyClasses\DALEventTypes.cs" />
+    <Compile Include="MyClasses\DALHalls.cs" />
+    <Compile Include="MyClasses\DALPayments.cs" />
+    <Compile Include="MyClasses\DALUsers.cs" />
+    <Compile Include="MyClasses\DALVenueSettings.cs" />
+    <Compile Include="MyClasses\DBBookingPackage.cs" />
+    <Compile Include="MyClasses\DBBookingType.cs" />
+    <Compile Include="MyClasses\DBCustomer.cs" />
+    <Compile Include="MyClasses\DBEventBooking.cs" />
+    <Compile Include="MyClasses\DBEventType.cs" />
+    <Compile Include="MyClasses\DBHall.cs" />
+    <Compile Include="MyClasses\DBPayment.cs" />
+    <Compile Include="MyClasses\DBUser.cs" />
+    <Compile Include="MyClasses\DBVenueSetting.cs" />
+    <Compile Include="MyClasses\MyConnectioString.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\CrystalReportPaymentReceipt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportPaymentReceipt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\FormReportDuePayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\FormReportDuePayment.Designer.cs">
+      <DependentUpon>FormReportDuePayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\FormReportPaymentCollection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\FormReportPaymentCollection.Designer.cs">
+      <DependentUpon>FormReportPaymentCollection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\FormReportBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\FormReportBooking.Designer.cs">
+      <DependentUpon>FormReportBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\FormReportCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\FormReportCustomer.Designer.cs">
+      <DependentUpon>FormReportCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\FormReportPaymentReceipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\FormReportPaymentReceipt.Designer.cs">
+      <DependentUpon>FormReportPaymentReceipt.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormBookingPackage.resx">
+      <DependentUpon>FormBookingPackage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBookingPackageSearch.resx">
+      <DependentUpon>FormBookingPackageSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPaymentSearch.resx">
+      <DependentUpon>FormPaymentSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPayment.resx">
+      <DependentUpon>FormPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEventBookingSearch.resx">
+      <DependentUpon>FormEventBookingSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEventBooking.resx">
+      <DependentUpon>FormEventBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCustomerSearch.resx">
+      <DependentUpon>FormCustomerSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCustomer.resx">
+      <DependentUpon>FormCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHall.resx">
+      <DependentUpon>FormHall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHallSearch.resx">
+      <DependentUpon>FormHallSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUserSearch.resx">
+      <DependentUpon>FormUserSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUser.resx">
+      <DependentUpon>FormUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEventTypeSearch.resx">
+      <DependentUpon>FormEventTypeSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEventType.resx">
+      <DependentUpon>FormEventType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBookingTypeSearch.resx">
+      <DependentUpon>FormBookingTypeSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMDI.resx">
+      <DependentUpon>FormMDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBookingType.resx">
+      <DependentUpon>FormBookingType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVenueDetails.resx">
+      <DependentUpon>FormVenueDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Reports\CrystalReportPaymentReceipt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportPaymentReceipt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\FormReportDuePayment.resx">
+      <DependentUpon>FormReportDuePayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\FormReportPaymentCollection.resx">
+      <DependentUpon>FormReportPaymentCollection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\FormReportBooking.resx">
+      <DependentUpon>FormReportBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\FormReportCustomer.resx">
+      <DependentUpon>FormReportCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\FormReportPaymentReceipt.resx">
+      <DependentUpon>FormReportPaymentReceipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
