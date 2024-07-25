@@ -30,6 +30,8 @@ namespace HallBookingManagementSystem
         private void InitializeComponent()
         {
             this.panelMain = new System.Windows.Forms.Panel();
+            this.textBoxRemark = new System.Windows.Forms.TextBox();
+            this.labelRemark = new System.Windows.Forms.Label();
             this.buttonAcceptPAyment = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.textBoxFinalAmount = new System.Windows.Forms.TextBox();
@@ -42,7 +44,7 @@ namespace HallBookingManagementSystem
             this.labelEventTypeId = new System.Windows.Forms.Label();
             this.comboBoxBookingTypeId = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerEventDate = new System.Windows.Forms.DateTimePicker();
             this.comboBoxPackageId = new System.Windows.Forms.ComboBox();
             this.textBoxReceivedAmount = new System.Windows.Forms.TextBox();
             this.labelReceivedAmount = new System.Windows.Forms.Label();
@@ -60,8 +62,6 @@ namespace HallBookingManagementSystem
             this.labelPackageId = new System.Windows.Forms.Label();
             this.labelCustomerName = new System.Windows.Forms.Label();
             this.comboBoxCustomerId = new System.Windows.Forms.ComboBox();
-            this.textBoxRemark = new System.Windows.Forms.TextBox();
-            this.labelRemark = new System.Windows.Forms.Label();
             this.panelMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,7 +84,7 @@ namespace HallBookingManagementSystem
             this.panelMain.Controls.Add(this.labelEventTypeId);
             this.panelMain.Controls.Add(this.comboBoxBookingTypeId);
             this.panelMain.Controls.Add(this.label6);
-            this.panelMain.Controls.Add(this.dateTimePicker1);
+            this.panelMain.Controls.Add(this.dateTimePickerEventDate);
             this.panelMain.Controls.Add(this.comboBoxPackageId);
             this.panelMain.Controls.Add(this.textBoxReceivedAmount);
             this.panelMain.Controls.Add(this.labelReceivedAmount);
@@ -107,6 +107,22 @@ namespace HallBookingManagementSystem
             this.panelMain.Size = new System.Drawing.Size(639, 423);
             this.panelMain.TabIndex = 0;
             // 
+            // textBoxRemark
+            // 
+            this.textBoxRemark.Location = new System.Drawing.Point(164, 338);
+            this.textBoxRemark.Name = "textBoxRemark";
+            this.textBoxRemark.Size = new System.Drawing.Size(126, 24);
+            this.textBoxRemark.TabIndex = 21;
+            // 
+            // labelRemark
+            // 
+            this.labelRemark.AutoSize = true;
+            this.labelRemark.Location = new System.Drawing.Point(33, 341);
+            this.labelRemark.Name = "labelRemark";
+            this.labelRemark.Size = new System.Drawing.Size(61, 18);
+            this.labelRemark.TabIndex = 20;
+            this.labelRemark.Text = "Remark";
+            // 
             // buttonAcceptPAyment
             // 
             this.buttonAcceptPAyment.Location = new System.Drawing.Point(480, 380);
@@ -115,6 +131,7 @@ namespace HallBookingManagementSystem
             this.buttonAcceptPAyment.TabIndex = 30;
             this.buttonAcceptPAyment.Text = "Accept Payment";
             this.buttonAcceptPAyment.UseVisualStyleBackColor = true;
+            this.buttonAcceptPAyment.Visible = false;
             this.buttonAcceptPAyment.Click += new System.EventHandler(this.buttonAcceptPAyment_Click);
             // 
             // label11
@@ -132,6 +149,7 @@ namespace HallBookingManagementSystem
             this.textBoxFinalAmount.ReadOnly = true;
             this.textBoxFinalAmount.Size = new System.Drawing.Size(126, 24);
             this.textBoxFinalAmount.TabIndex = 25;
+            this.textBoxFinalAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // labelFinalAmount
             // 
@@ -148,6 +166,8 @@ namespace HallBookingManagementSystem
             this.textBoxDiscountAmount.Name = "textBoxDiscountAmount";
             this.textBoxDiscountAmount.Size = new System.Drawing.Size(126, 24);
             this.textBoxDiscountAmount.TabIndex = 19;
+            this.textBoxDiscountAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxDiscountAmount.TextChanged += new System.EventHandler(this.textBoxDiscountAmount_TextChanged);
             // 
             // labelDiscountAmount
             // 
@@ -165,6 +185,7 @@ namespace HallBookingManagementSystem
             this.textBoxPackageAmount.ReadOnly = true;
             this.textBoxPackageAmount.Size = new System.Drawing.Size(126, 24);
             this.textBoxPackageAmount.TabIndex = 23;
+            this.textBoxPackageAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // labelPackageAmount
             // 
@@ -209,14 +230,14 @@ namespace HallBookingManagementSystem
             this.label6.TabIndex = 2;
             this.label6.Text = "Event Date";
             // 
-            // dateTimePicker1
+            // dateTimePickerEventDate
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(490, 17);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(115, 24);
-            this.dateTimePicker1.TabIndex = 3;
+            this.dateTimePickerEventDate.CustomFormat = "dd/MM/yyyy";
+            this.dateTimePickerEventDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerEventDate.Location = new System.Drawing.Point(490, 17);
+            this.dateTimePickerEventDate.Name = "dateTimePickerEventDate";
+            this.dateTimePickerEventDate.Size = new System.Drawing.Size(115, 24);
+            this.dateTimePickerEventDate.TabIndex = 3;
             // 
             // comboBoxPackageId
             // 
@@ -225,6 +246,7 @@ namespace HallBookingManagementSystem
             this.comboBoxPackageId.Name = "comboBoxPackageId";
             this.comboBoxPackageId.Size = new System.Drawing.Size(442, 26);
             this.comboBoxPackageId.TabIndex = 7;
+            this.comboBoxPackageId.SelectedIndexChanged += new System.EventHandler(this.comboBoxPackageId_SelectedIndexChanged);
             // 
             // textBoxReceivedAmount
             // 
@@ -233,6 +255,7 @@ namespace HallBookingManagementSystem
             this.textBoxReceivedAmount.ReadOnly = true;
             this.textBoxReceivedAmount.Size = new System.Drawing.Size(126, 24);
             this.textBoxReceivedAmount.TabIndex = 27;
+            this.textBoxReceivedAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // labelReceivedAmount
             // 
@@ -249,6 +272,7 @@ namespace HallBookingManagementSystem
             this.textBoxPersonCount.Name = "textBoxPersonCount";
             this.textBoxPersonCount.Size = new System.Drawing.Size(126, 24);
             this.textBoxPersonCount.TabIndex = 17;
+            this.textBoxPersonCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // labelPersonCount
             // 
@@ -297,9 +321,9 @@ namespace HallBookingManagementSystem
             this.labelBookingDate.AutoSize = true;
             this.labelBookingDate.Location = new System.Drawing.Point(33, 22);
             this.labelBookingDate.Name = "labelBookingDate";
-            this.labelBookingDate.Size = new System.Drawing.Size(98, 18);
+            this.labelBookingDate.Size = new System.Drawing.Size(93, 18);
             this.labelBookingDate.TabIndex = 0;
-            this.labelBookingDate.Text = "Booking Date";
+            this.labelBookingDate.Text = "Receipt Date";
             // 
             // dateTimePickerBookingDate
             // 
@@ -327,6 +351,7 @@ namespace HallBookingManagementSystem
             this.buttonCancel.TabIndex = 29;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // buttonSave
             // 
@@ -336,6 +361,7 @@ namespace HallBookingManagementSystem
             this.buttonSave.TabIndex = 28;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // labelPackageId
             // 
@@ -362,22 +388,6 @@ namespace HallBookingManagementSystem
             this.comboBoxCustomerId.Name = "comboBoxCustomerId";
             this.comboBoxCustomerId.Size = new System.Drawing.Size(442, 26);
             this.comboBoxCustomerId.TabIndex = 5;
-            // 
-            // textBoxRemark
-            // 
-            this.textBoxRemark.Location = new System.Drawing.Point(164, 338);
-            this.textBoxRemark.Name = "textBoxRemark";
-            this.textBoxRemark.Size = new System.Drawing.Size(126, 24);
-            this.textBoxRemark.TabIndex = 21;
-            // 
-            // labelRemark
-            // 
-            this.labelRemark.AutoSize = true;
-            this.labelRemark.Location = new System.Drawing.Point(33, 341);
-            this.labelRemark.Name = "labelRemark";
-            this.labelRemark.Size = new System.Drawing.Size(61, 18);
-            this.labelRemark.TabIndex = 20;
-            this.labelRemark.Text = "Remark";
             // 
             // FormEventBooking
             // 
@@ -423,7 +433,7 @@ namespace HallBookingManagementSystem
         private System.Windows.Forms.Label labelEventName;
         private System.Windows.Forms.ComboBox comboBoxCustomerId;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerEventDate;
         private System.Windows.Forms.ComboBox comboBoxBookingTypeId;
         private System.Windows.Forms.ComboBox comboBoxEventTypeId;
         private System.Windows.Forms.Label labelEventTypeId;

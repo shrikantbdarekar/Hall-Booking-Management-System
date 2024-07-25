@@ -29,9 +29,13 @@ namespace HallBookingManagementSystem
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.dataGridViewPayments = new System.Windows.Forms.DataGridView();
             this.buttonPrintReceipt = new System.Windows.Forms.Button();
+            this.dgcPrint = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dgcPaymentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgcPaymentDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgcEventBookingId = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -64,6 +68,7 @@ namespace HallBookingManagementSystem
             this.dataGridViewPayments.ColumnHeadersHeight = 30;
             this.dataGridViewPayments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridViewPayments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgcPrint,
             this.dgcPaymentId,
             this.dgcPaymentDate,
             this.dgcEventBookingId,
@@ -76,19 +81,28 @@ namespace HallBookingManagementSystem
             this.dataGridViewPayments.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewPayments.Name = "dataGridViewPayments";
             this.dataGridViewPayments.ReadOnly = true;
-            this.dataGridViewPayments.Size = new System.Drawing.Size(1053, 498);
+            this.dataGridViewPayments.Size = new System.Drawing.Size(1055, 498);
             this.dataGridViewPayments.TabIndex = 13;
             this.dataGridViewPayments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomers_CellContentClick);
             // 
             // buttonPrintReceipt
             // 
-            this.buttonPrintReceipt.Location = new System.Drawing.Point(918, 14);
+            this.buttonPrintReceipt.Location = new System.Drawing.Point(947, 14);
             this.buttonPrintReceipt.Name = "buttonPrintReceipt";
             this.buttonPrintReceipt.Size = new System.Drawing.Size(124, 27);
             this.buttonPrintReceipt.TabIndex = 33;
             this.buttonPrintReceipt.Text = "Print Receipt";
             this.buttonPrintReceipt.UseVisualStyleBackColor = true;
+            this.buttonPrintReceipt.Visible = false;
             this.buttonPrintReceipt.Click += new System.EventHandler(this.buttonPrintReceipt_Click);
+            // 
+            // dgcPrint
+            // 
+            this.dgcPrint.HeaderText = "Print";
+            this.dgcPrint.Name = "dgcPrint";
+            this.dgcPrint.ReadOnly = true;
+            this.dgcPrint.Text = "Print";
+            this.dgcPrint.UseColumnTextForButtonValue = true;
             // 
             // dgcPaymentId
             // 
@@ -119,6 +133,8 @@ namespace HallBookingManagementSystem
             // dgcDueAmount
             // 
             this.dgcDueAmount.DataPropertyName = "DueAmount";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.dgcDueAmount.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgcDueAmount.HeaderText = "Due Amt";
             this.dgcDueAmount.Name = "dgcDueAmount";
             this.dgcDueAmount.ReadOnly = true;
@@ -126,6 +142,8 @@ namespace HallBookingManagementSystem
             // dgcPaymentAmount
             // 
             this.dgcPaymentAmount.DataPropertyName = "PaymentAmount";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.dgcPaymentAmount.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgcPaymentAmount.HeaderText = "Payment Amt";
             this.dgcPaymentAmount.Name = "dgcPaymentAmount";
             this.dgcPaymentAmount.ReadOnly = true;
@@ -133,6 +151,8 @@ namespace HallBookingManagementSystem
             // dgcBalanceAmount
             // 
             this.dgcBalanceAmount.DataPropertyName = "BalanceAmount";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.dgcBalanceAmount.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgcBalanceAmount.HeaderText = "Bal Amt";
             this.dgcBalanceAmount.Name = "dgcBalanceAmount";
             this.dgcBalanceAmount.ReadOnly = true;
@@ -144,6 +164,7 @@ namespace HallBookingManagementSystem
             this.dgcEdit.ReadOnly = true;
             this.dgcEdit.Text = "Edit";
             this.dgcEdit.UseColumnTextForButtonValue = true;
+            this.dgcEdit.Visible = false;
             this.dgcEdit.Width = 80;
             // 
             // dgcDelete
@@ -160,7 +181,7 @@ namespace HallBookingManagementSystem
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1084, 561);
+            this.ClientSize = new System.Drawing.Size(1086, 561);
             this.Controls.Add(this.buttonPrintReceipt);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.dataGridViewPayments);
@@ -184,6 +205,7 @@ namespace HallBookingManagementSystem
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.DataGridView dataGridViewPayments;
         private System.Windows.Forms.Button buttonPrintReceipt;
+        private System.Windows.Forms.DataGridViewButtonColumn dgcPrint;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgcPaymentId;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgcPaymentDate;
         private System.Windows.Forms.DataGridViewComboBoxColumn dgcEventBookingId;

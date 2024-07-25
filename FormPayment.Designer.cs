@@ -30,8 +30,9 @@ namespace HallBookingManagementSystem
         private void InitializeComponent()
         {
             this.panelMain = new System.Windows.Forms.Panel();
+            this.labelRemark = new System.Windows.Forms.Label();
+            this.textBoxRemark = new System.Windows.Forms.TextBox();
             this.buttonPrintReceipt = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.labelPaymentAmount = new System.Windows.Forms.Label();
             this.textBoxDueAmount = new System.Windows.Forms.TextBox();
@@ -39,15 +40,12 @@ namespace HallBookingManagementSystem
             this.textBoxBalanceAmount = new System.Windows.Forms.TextBox();
             this.labelBalanceAmount = new System.Windows.Forms.Label();
             this.textBoxPaymentAmount = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.labelPaymentDate = new System.Windows.Forms.Label();
             this.dateTimePickerPaymentDate = new System.Windows.Forms.DateTimePicker();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
             this.labelEventBookingId = new System.Windows.Forms.Label();
             this.comboBoxEventBookingId = new System.Windows.Forms.ComboBox();
-            this.labelRemark = new System.Windows.Forms.Label();
-            this.textBoxRemark = new System.Windows.Forms.TextBox();
             this.panelMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +57,6 @@ namespace HallBookingManagementSystem
             this.panelMain.Controls.Add(this.labelRemark);
             this.panelMain.Controls.Add(this.textBoxRemark);
             this.panelMain.Controls.Add(this.buttonPrintReceipt);
-            this.panelMain.Controls.Add(this.label2);
             this.panelMain.Controls.Add(this.label11);
             this.panelMain.Controls.Add(this.labelPaymentAmount);
             this.panelMain.Controls.Add(this.textBoxDueAmount);
@@ -67,7 +64,6 @@ namespace HallBookingManagementSystem
             this.panelMain.Controls.Add(this.textBoxBalanceAmount);
             this.panelMain.Controls.Add(this.labelBalanceAmount);
             this.panelMain.Controls.Add(this.textBoxPaymentAmount);
-            this.panelMain.Controls.Add(this.textBox1);
             this.panelMain.Controls.Add(this.labelPaymentDate);
             this.panelMain.Controls.Add(this.dateTimePickerPaymentDate);
             this.panelMain.Controls.Add(this.buttonCancel);
@@ -76,12 +72,28 @@ namespace HallBookingManagementSystem
             this.panelMain.Controls.Add(this.comboBoxEventBookingId);
             this.panelMain.Location = new System.Drawing.Point(12, 12);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(639, 320);
+            this.panelMain.Size = new System.Drawing.Size(639, 215);
             this.panelMain.TabIndex = 0;
+            // 
+            // labelRemark
+            // 
+            this.labelRemark.AutoSize = true;
+            this.labelRemark.Location = new System.Drawing.Point(349, 139);
+            this.labelRemark.Name = "labelRemark";
+            this.labelRemark.Size = new System.Drawing.Size(61, 18);
+            this.labelRemark.TabIndex = 32;
+            this.labelRemark.Text = "Remark";
+            // 
+            // textBoxRemark
+            // 
+            this.textBoxRemark.Location = new System.Drawing.Point(416, 136);
+            this.textBoxRemark.Name = "textBoxRemark";
+            this.textBoxRemark.Size = new System.Drawing.Size(189, 24);
+            this.textBoxRemark.TabIndex = 33;
             // 
             // buttonPrintReceipt
             // 
-            this.buttonPrintReceipt.Location = new System.Drawing.Point(481, 279);
+            this.buttonPrintReceipt.Location = new System.Drawing.Point(481, 175);
             this.buttonPrintReceipt.Name = "buttonPrintReceipt";
             this.buttonPrintReceipt.Size = new System.Drawing.Size(124, 27);
             this.buttonPrintReceipt.TabIndex = 13;
@@ -89,19 +101,10 @@ namespace HallBookingManagementSystem
             this.buttonPrintReceipt.UseVisualStyleBackColor = true;
             this.buttonPrintReceipt.Click += new System.EventHandler(this.buttonPrintReceipt_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(242, 112);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(273, 18);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Show All Details For Reference Purpose";
-            // 
             // label11
             // 
             this.label11.BackColor = System.Drawing.Color.LightGray;
-            this.label11.Location = new System.Drawing.Point(164, 274);
+            this.label11.Location = new System.Drawing.Point(164, 170);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(441, 2);
             this.label11.TabIndex = 31;
@@ -109,7 +112,7 @@ namespace HallBookingManagementSystem
             // labelPaymentAmount
             // 
             this.labelPaymentAmount.AutoSize = true;
-            this.labelPaymentAmount.Location = new System.Drawing.Point(33, 216);
+            this.labelPaymentAmount.Location = new System.Drawing.Point(33, 112);
             this.labelPaymentAmount.Name = "labelPaymentAmount";
             this.labelPaymentAmount.Size = new System.Drawing.Size(121, 18);
             this.labelPaymentAmount.TabIndex = 7;
@@ -117,16 +120,17 @@ namespace HallBookingManagementSystem
             // 
             // textBoxDueAmount
             // 
-            this.textBoxDueAmount.Location = new System.Drawing.Point(164, 183);
+            this.textBoxDueAmount.Location = new System.Drawing.Point(164, 79);
             this.textBoxDueAmount.Name = "textBoxDueAmount";
             this.textBoxDueAmount.ReadOnly = true;
             this.textBoxDueAmount.Size = new System.Drawing.Size(126, 24);
             this.textBoxDueAmount.TabIndex = 6;
+            this.textBoxDueAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // labelDueAmount
             // 
             this.labelDueAmount.AutoSize = true;
-            this.labelDueAmount.Location = new System.Drawing.Point(33, 186);
+            this.labelDueAmount.Location = new System.Drawing.Point(33, 82);
             this.labelDueAmount.Name = "labelDueAmount";
             this.labelDueAmount.Size = new System.Drawing.Size(90, 18);
             this.labelDueAmount.TabIndex = 5;
@@ -134,16 +138,17 @@ namespace HallBookingManagementSystem
             // 
             // textBoxBalanceAmount
             // 
-            this.textBoxBalanceAmount.Location = new System.Drawing.Point(164, 243);
+            this.textBoxBalanceAmount.Location = new System.Drawing.Point(164, 139);
             this.textBoxBalanceAmount.Name = "textBoxBalanceAmount";
             this.textBoxBalanceAmount.ReadOnly = true;
             this.textBoxBalanceAmount.Size = new System.Drawing.Size(126, 24);
             this.textBoxBalanceAmount.TabIndex = 10;
+            this.textBoxBalanceAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // labelBalanceAmount
             // 
             this.labelBalanceAmount.AutoSize = true;
-            this.labelBalanceAmount.Location = new System.Drawing.Point(33, 246);
+            this.labelBalanceAmount.Location = new System.Drawing.Point(33, 142);
             this.labelBalanceAmount.Name = "labelBalanceAmount";
             this.labelBalanceAmount.Size = new System.Drawing.Size(116, 18);
             this.labelBalanceAmount.TabIndex = 9;
@@ -151,18 +156,12 @@ namespace HallBookingManagementSystem
             // 
             // textBoxPaymentAmount
             // 
-            this.textBoxPaymentAmount.Location = new System.Drawing.Point(163, 213);
+            this.textBoxPaymentAmount.Location = new System.Drawing.Point(163, 109);
             this.textBoxPaymentAmount.Name = "textBoxPaymentAmount";
             this.textBoxPaymentAmount.Size = new System.Drawing.Size(126, 24);
             this.textBoxPaymentAmount.TabIndex = 8;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(164, 79);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(442, 98);
-            this.textBox1.TabIndex = 4;
+            this.textBoxPaymentAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxPaymentAmount.TextChanged += new System.EventHandler(this.textBoxPaymentAmount_TextChanged);
             // 
             // labelPaymentDate
             // 
@@ -184,7 +183,7 @@ namespace HallBookingManagementSystem
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(245, 279);
+            this.buttonCancel.Location = new System.Drawing.Point(245, 175);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 27);
             this.buttonCancel.TabIndex = 12;
@@ -194,7 +193,7 @@ namespace HallBookingManagementSystem
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(164, 279);
+            this.buttonSave.Location = new System.Drawing.Point(164, 175);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(75, 27);
             this.buttonSave.TabIndex = 11;
@@ -218,29 +217,14 @@ namespace HallBookingManagementSystem
             this.comboBoxEventBookingId.Name = "comboBoxEventBookingId";
             this.comboBoxEventBookingId.Size = new System.Drawing.Size(442, 26);
             this.comboBoxEventBookingId.TabIndex = 3;
-            // 
-            // labelRemark
-            // 
-            this.labelRemark.AutoSize = true;
-            this.labelRemark.Location = new System.Drawing.Point(349, 243);
-            this.labelRemark.Name = "labelRemark";
-            this.labelRemark.Size = new System.Drawing.Size(121, 18);
-            this.labelRemark.TabIndex = 32;
-            this.labelRemark.Text = "Payment Amount";
-            // 
-            // textBoxRemark
-            // 
-            this.textBoxRemark.Location = new System.Drawing.Point(479, 240);
-            this.textBoxRemark.Name = "textBoxRemark";
-            this.textBoxRemark.Size = new System.Drawing.Size(126, 24);
-            this.textBoxRemark.TabIndex = 33;
+            this.comboBoxEventBookingId.SelectedIndexChanged += new System.EventHandler(this.comboBoxEventBookingId_SelectedIndexChanged);
             // 
             // FormPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(663, 344);
+            this.ClientSize = new System.Drawing.Size(663, 239);
             this.Controls.Add(this.panelMain);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -269,8 +253,6 @@ namespace HallBookingManagementSystem
         private System.Windows.Forms.TextBox textBoxBalanceAmount;
         private System.Windows.Forms.Label labelBalanceAmount;
         private System.Windows.Forms.TextBox textBoxPaymentAmount;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBoxEventBookingId;
         private System.Windows.Forms.Label labelPaymentAmount;
         private System.Windows.Forms.TextBox textBoxDueAmount;

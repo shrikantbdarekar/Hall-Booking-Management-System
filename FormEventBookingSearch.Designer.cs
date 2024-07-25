@@ -38,6 +38,8 @@ namespace HallBookingManagementSystem
             this.dgcCustomerId = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dgcEventTypeId = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dgcFinalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgcPayment = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dgcReceivedAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgcEdit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dgcDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEventBooking)).BeginInit();
@@ -70,14 +72,17 @@ namespace HallBookingManagementSystem
             this.dgcCustomerId,
             this.dgcEventTypeId,
             this.dgcFinalAmount,
+            this.dgcPayment,
+            this.dgcReceivedAmount,
             this.dgcEdit,
             this.dgcDelete});
             this.dataGridViewEventBooking.Location = new System.Drawing.Point(16, 48);
             this.dataGridViewEventBooking.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewEventBooking.Name = "dataGridViewEventBooking";
             this.dataGridViewEventBooking.ReadOnly = true;
-            this.dataGridViewEventBooking.Size = new System.Drawing.Size(930, 498);
+            this.dataGridViewEventBooking.Size = new System.Drawing.Size(1153, 498);
             this.dataGridViewEventBooking.TabIndex = 13;
+            this.dataGridViewEventBooking.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEventBooking_CellContentClick);
             // 
             // dgcEventBookingId
             // 
@@ -132,6 +137,22 @@ namespace HallBookingManagementSystem
             this.dgcFinalAmount.ReadOnly = true;
             this.dgcFinalAmount.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
+            // dgcPayment
+            // 
+            this.dgcPayment.HeaderText = "Payment";
+            this.dgcPayment.Name = "dgcPayment";
+            this.dgcPayment.ReadOnly = true;
+            this.dgcPayment.Text = "Payment";
+            this.dgcPayment.UseColumnTextForButtonValue = true;
+            this.dgcPayment.Width = 80;
+            // 
+            // dgcReceivedAmount
+            // 
+            this.dgcReceivedAmount.DataPropertyName = "ReceivedAmount";
+            this.dgcReceivedAmount.HeaderText = "RCV Amt";
+            this.dgcReceivedAmount.Name = "dgcReceivedAmount";
+            this.dgcReceivedAmount.ReadOnly = true;
+            // 
             // dgcEdit
             // 
             this.dgcEdit.HeaderText = "Edit";
@@ -139,6 +160,7 @@ namespace HallBookingManagementSystem
             this.dgcEdit.ReadOnly = true;
             this.dgcEdit.Text = "Edit";
             this.dgcEdit.UseColumnTextForButtonValue = true;
+            this.dgcEdit.Width = 80;
             // 
             // dgcDelete
             // 
@@ -147,13 +169,14 @@ namespace HallBookingManagementSystem
             this.dgcDelete.ReadOnly = true;
             this.dgcDelete.Text = "Delete";
             this.dgcDelete.UseColumnTextForButtonValue = true;
+            this.dgcDelete.Width = 80;
             // 
             // FormEventBookingSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(961, 561);
+            this.ClientSize = new System.Drawing.Size(1184, 561);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.dataGridViewEventBooking);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -181,6 +204,8 @@ namespace HallBookingManagementSystem
         private System.Windows.Forms.DataGridViewComboBoxColumn dgcCustomerId;
         private System.Windows.Forms.DataGridViewComboBoxColumn dgcEventTypeId;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgcFinalAmount;
+        private System.Windows.Forms.DataGridViewButtonColumn dgcPayment;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgcReceivedAmount;
         private System.Windows.Forms.DataGridViewButtonColumn dgcEdit;
         private System.Windows.Forms.DataGridViewButtonColumn dgcDelete;
     }
