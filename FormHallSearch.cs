@@ -19,7 +19,7 @@ namespace HallBookingManagementSystem
             InitializeComponent();
 
             DALHall = new DALHalls();
-            dataGridViewHall.AutoGenerateColumns = false;
+            dataGridViewHalls.AutoGenerateColumns = false;
         }
 
         private void FormHallSearch_Load(object sender, EventArgs e)
@@ -30,7 +30,7 @@ namespace HallBookingManagementSystem
         private void LoadData()
         {
             // Show all records to gridview
-            dataGridViewHall.DataSource = DALHall.GetAllHalls();
+            dataGridViewHalls.DataSource = DALHall.GetAllHalls();
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)

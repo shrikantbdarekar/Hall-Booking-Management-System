@@ -83,6 +83,7 @@ namespace HallBookingManagementSystem
             this.buttonCancel.TabIndex = 7;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // buttonSave
             // 
@@ -92,6 +93,7 @@ namespace HallBookingManagementSystem
             this.buttonSave.TabIndex = 6;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // textBoxHallCapacity
             // 
@@ -99,6 +101,7 @@ namespace HallBookingManagementSystem
             this.textBoxHallCapacity.Name = "textBoxHallCapacity";
             this.textBoxHallCapacity.Size = new System.Drawing.Size(75, 24);
             this.textBoxHallCapacity.TabIndex = 3;
+            this.textBoxHallCapacity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // labelHallCapacity
             // 
@@ -141,6 +144,7 @@ namespace HallBookingManagementSystem
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hall Detail";
+            this.Load += new System.EventHandler(this.FormHall_Load);
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
             this.ResumeLayout(false);

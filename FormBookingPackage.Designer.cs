@@ -105,6 +105,7 @@ namespace HallBookingManagementSystem
             this.buttonCancel.TabIndex = 9;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // buttonSave
             // 
@@ -114,6 +115,7 @@ namespace HallBookingManagementSystem
             this.buttonSave.TabIndex = 8;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // textBoxPackageAmount
             // 
@@ -163,6 +165,7 @@ namespace HallBookingManagementSystem
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Booking Package";
+            this.Load += new System.EventHandler(this.FormBookingPackage_Load);
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
             this.ResumeLayout(false);

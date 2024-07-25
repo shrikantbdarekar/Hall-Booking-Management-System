@@ -33,7 +33,7 @@ namespace HallBookingManagementSystem
             this.dataGridViewBookingPackage = new System.Windows.Forms.DataGridView();
             this.dgcPackageId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgcPackageName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgcHallId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgcHallId = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dgcPackageAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgcPackageDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgcEdit = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -75,6 +75,7 @@ namespace HallBookingManagementSystem
             this.dataGridViewBookingPackage.ReadOnly = true;
             this.dataGridViewBookingPackage.Size = new System.Drawing.Size(1053, 406);
             this.dataGridViewBookingPackage.TabIndex = 13;
+            this.dataGridViewBookingPackage.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewBookingPackage_CellContentClick);
             // 
             // dgcPackageId
             // 
@@ -95,9 +96,12 @@ namespace HallBookingManagementSystem
             // dgcHallId
             // 
             this.dgcHallId.DataPropertyName = "HallId";
+            this.dgcHallId.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.dgcHallId.HeaderText = "Hall Name";
             this.dgcHallId.Name = "dgcHallId";
             this.dgcHallId.ReadOnly = true;
+            this.dgcHallId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgcHallId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dgcHallId.Width = 200;
             // 
             // dgcPackageAmount
@@ -162,7 +166,7 @@ namespace HallBookingManagementSystem
         private System.Windows.Forms.DataGridView dataGridViewBookingPackage;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgcPackageId;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgcPackageName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgcHallId;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dgcHallId;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgcPackageAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgcPackageDescription;
         private System.Windows.Forms.DataGridViewButtonColumn dgcEdit;

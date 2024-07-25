@@ -29,6 +29,7 @@ namespace HallBookingManagementSystem
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.dataGridViewHalls = new System.Windows.Forms.DataGridView();
             this.dgcHallId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -94,6 +95,8 @@ namespace HallBookingManagementSystem
             // dgcHallCapacity
             // 
             this.dgcHallCapacity.DataPropertyName = "HallCapacity";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.dgcHallCapacity.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgcHallCapacity.HeaderText = "Capacity";
             this.dgcHallCapacity.Name = "dgcHallCapacity";
             this.dgcHallCapacity.ReadOnly = true;
