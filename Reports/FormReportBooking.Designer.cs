@@ -29,48 +29,49 @@ namespace HallBookingManagementSystem.Reports
         /// </summary>
         private void InitializeComponent()
         {
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.crystalReportViewerMain = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.SuspendLayout();
             // 
-            // crystalReportViewer1
+            // crystalReportViewerMain
             // 
-            this.crystalReportViewer1.ActiveViewIndex = -1;
-            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ShowCloseButton = false;
-            this.crystalReportViewer1.ShowCopyButton = false;
-            this.crystalReportViewer1.ShowExportButton = false;
-            this.crystalReportViewer1.ShowGotoPageButton = false;
-            this.crystalReportViewer1.ShowGroupTreeButton = false;
-            this.crystalReportViewer1.ShowParameterPanelButton = false;
-            this.crystalReportViewer1.ShowRefreshButton = false;
-            this.crystalReportViewer1.ShowTextSearchButton = false;
-            this.crystalReportViewer1.ShowZoomButton = false;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(1184, 561);
-            this.crystalReportViewer1.TabIndex = 0;
-            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            this.crystalReportViewerMain.ActiveViewIndex = -1;
+            this.crystalReportViewerMain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewerMain.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewerMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewerMain.Location = new System.Drawing.Point(0, 0);
+            this.crystalReportViewerMain.Name = "crystalReportViewerMain";
+            this.crystalReportViewerMain.ShowCloseButton = false;
+            this.crystalReportViewerMain.ShowCopyButton = false;
+            this.crystalReportViewerMain.ShowExportButton = false;
+            this.crystalReportViewerMain.ShowGotoPageButton = false;
+            this.crystalReportViewerMain.ShowGroupTreeButton = false;
+            this.crystalReportViewerMain.ShowParameterPanelButton = false;
+            this.crystalReportViewerMain.ShowRefreshButton = false;
+            this.crystalReportViewerMain.ShowTextSearchButton = false;
+            this.crystalReportViewerMain.ShowZoomButton = false;
+            this.crystalReportViewerMain.Size = new System.Drawing.Size(1184, 561);
+            this.crystalReportViewerMain.TabIndex = 0;
+            this.crystalReportViewerMain.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // FormReportBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 561);
-            this.Controls.Add(this.crystalReportViewer1);
+            this.Controls.Add(this.crystalReportViewerMain);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormReportBooking";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Booking Report";
+            this.Load += new System.EventHandler(this.FormReportBooking_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewerMain;
     }
 }

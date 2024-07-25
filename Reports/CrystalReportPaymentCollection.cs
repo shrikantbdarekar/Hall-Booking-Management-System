@@ -16,14 +16,14 @@ namespace HallBookingManagementSystem.Reports {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CrystalReportPaymentReceipt : ReportClass {
+    public class CrystalReportPaymentCollection : ReportClass {
         
-        public CrystalReportPaymentReceipt() {
+        public CrystalReportPaymentCollection() {
         }
         
         public override string ResourceName {
             get {
-                return "CrystalReportPaymentReceipt.rpt";
+                return "CrystalReportPaymentCollection.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace HallBookingManagementSystem.Reports {
         
         public override string FullResourceName {
             get {
-                return "HallBookingManagementSystem.Reports.CrystalReportPaymentReceipt.rpt";
+                return "HallBookingManagementSystem.Reports.CrystalReportPaymentCollection.rpt";
             }
             set {
                 // Do nothing
@@ -130,9 +130,9 @@ namespace HallBookingManagementSystem.Reports {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCrystalReportPaymentReceipt : Component, ICachedReport {
+    public class CachedCrystalReportPaymentCollection : Component, ICachedReport {
         
-        public CachedCrystalReportPaymentReceipt() {
+        public CachedCrystalReportPaymentCollection() {
         }
         
         [Browsable(false)]
@@ -169,7 +169,7 @@ namespace HallBookingManagementSystem.Reports {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CrystalReportPaymentReceipt rpt = new CrystalReportPaymentReceipt();
+            CrystalReportPaymentCollection rpt = new CrystalReportPaymentCollection();
             rpt.Site = this.Site;
             return rpt;
         }

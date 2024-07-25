@@ -16,14 +16,14 @@ namespace HallBookingManagementSystem.Reports {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CrystalReportPaymentReceipt : ReportClass {
+    public class CrystalReportCustomers : ReportClass {
         
-        public CrystalReportPaymentReceipt() {
+        public CrystalReportCustomers() {
         }
         
         public override string ResourceName {
             get {
-                return "CrystalReportPaymentReceipt.rpt";
+                return "CrystalReportCustomers.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace HallBookingManagementSystem.Reports {
         
         public override string FullResourceName {
             get {
-                return "HallBookingManagementSystem.Reports.CrystalReportPaymentReceipt.rpt";
+                return "HallBookingManagementSystem.Reports.CrystalReportCustomers.rpt";
             }
             set {
                 // Do nothing
@@ -90,7 +90,7 @@ namespace HallBookingManagementSystem.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_VenueName {
+        public CrystalDecisions.Shared.IParameterField Parameter_Email {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -98,7 +98,7 @@ namespace HallBookingManagementSystem.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_VenueAddress {
+        public CrystalDecisions.Shared.IParameterField Parameter_Website {
             get {
                 return this.DataDefinition.ParameterFields[1];
             }
@@ -106,7 +106,7 @@ namespace HallBookingManagementSystem.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Email {
+        public CrystalDecisions.Shared.IParameterField Parameter_MobileNo {
             get {
                 return this.DataDefinition.ParameterFields[2];
             }
@@ -114,7 +114,7 @@ namespace HallBookingManagementSystem.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Website {
+        public CrystalDecisions.Shared.IParameterField Parameter_VenueName {
             get {
                 return this.DataDefinition.ParameterFields[3];
             }
@@ -122,7 +122,7 @@ namespace HallBookingManagementSystem.Reports {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_MobileNo {
+        public CrystalDecisions.Shared.IParameterField Parameter_VenueAddress {
             get {
                 return this.DataDefinition.ParameterFields[4];
             }
@@ -130,9 +130,9 @@ namespace HallBookingManagementSystem.Reports {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCrystalReportPaymentReceipt : Component, ICachedReport {
+    public class CachedCrystalReportCustomers : Component, ICachedReport {
         
-        public CachedCrystalReportPaymentReceipt() {
+        public CachedCrystalReportCustomers() {
         }
         
         [Browsable(false)]
@@ -169,7 +169,7 @@ namespace HallBookingManagementSystem.Reports {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CrystalReportPaymentReceipt rpt = new CrystalReportPaymentReceipt();
+            CrystalReportCustomers rpt = new CrystalReportCustomers();
             rpt.Site = this.Site;
             return rpt;
         }
