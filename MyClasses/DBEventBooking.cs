@@ -40,5 +40,18 @@ namespace HallBookingManagementSystem.MyClasses
 
         public decimal DueAmount { get { return FinalAmount - ReceivedAmount; } }
     }
+    public class BookingReport
+    {
+        public int EventBookingId { get; set; }
+        public DateTime EventDate { get; set; }
+        public string EventName { get; set; }
+        public string CustomerName { get; set; }
+        public string PackageName { get; set; }
+        public int HallId { get; set; }
+        public string HallName { get; set; }
+        public string BookingTypeName { get; set; }
+    }
 
-}
+
+
+    }

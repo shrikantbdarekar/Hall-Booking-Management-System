@@ -21,14 +21,16 @@ namespace HallBookingManagementSystem.Reports
         private void FormReportBooking_Load(object sender, EventArgs e)
         {
             DALVenueSettings DALVenueSetting = new DALVenueSettings();
-            //DALCustomers DALCustomerObj = new DALCustomers();
+            DALEventBookings DALEventBooking = new DALEventBookings();
 
             VenueSetting VenueSettingObj = DALVenueSetting.GetVenueSettingById(Properties.Settings.Default.VenueId);
-            //List<Customer> customers = DALCustomerObj.GetAllCustomers();
+            List<BookingReport> bookings = DALEventBooking.GetBookingReport();
 
             CrystalReportBooking rptObj = new CrystalReportBooking();
+            
             // First: set DataSource for report document
-            //rptObj.SetDataSource(customers);
+            rptObj.SetDataSource(bookings);
+
             // Second: Add values for report parameters.
             rptObj.ParameterFields["VenueName"].CurrentValues.AddValue(VenueSettingObj.VenueName);
             rptObj.ParameterFields["VenueAddress"].CurrentValues.AddValue(VenueSettingObj.VenueAddress);

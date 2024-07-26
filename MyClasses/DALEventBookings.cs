@@ -225,5 +225,50 @@ namespace HallBookingManagementSystem.MyClasses
             return eventBookings;
         }
 
+        // Get Bookings Report
+        public List<BookingReport> GetBookingReport()
+        {
+            List<BookingReport> bookingReportList = new List<BookingReport>();
+            //string query = "Select B.EventBookingId,B.EventDate,B.EventName,C.CustomerName,P.PackageName," +
+            //        "H.HallId,H.HallName,T.BookingTypeName " +
+            //        "From EventBookings B "+
+            //        "Join BookingPackages P on B.PackageId = P.PackageId "+
+            //        "Join Halls H On P.HallId = H.HallId "+
+            //        "Join Customers C On B.CustomerId = C.CustomerId "+
+            //        "Join BookingType T On B.BookingTypeId = T.BookingTypeId";
+
+            string query = "Select B.EventBookingId,B.EventDate,B.EventName,C.CustomerName,P.PackageName," +
+                    "H.HallId,H.HallName,T.BookingTypeName " +
+                    "From EventBookings B " +
+                    "Left Outer Join BookingPackages P on B.PackageId = P.PackageId " +
+                    "Left Outer Join Halls H On P.HallId = H.HallId " +
+                    "Left Outer Join Customers C On B.CustomerId = C.CustomerId " +
+                    "Left Outer Join BookingType T On B.BookingTypeId = T.BookingTypeId "+
+                    "Order By H.HallName";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    BookingReport bookingReport = new BookingReport
+                    {
+                        EventBookingId = Convert.ToInt32(reader["EventBookingId"]),
+                        EventDate = Convert.ToDateTime(reader["EventDate"]),
+                        EventName = reader["EventName"].ToString(),
+                        CustomerName = reader["CustomerName"].ToString(),
+                        PackageName = reader["PackageName"].ToString(),
+                        HallId = Convert.ToInt32(reader["HallId"]),
+                        HallName = reader["HallName"].ToString(),
+                        BookingTypeName = reader["BookingTypeName"].ToString()
+                    };
+                    bookingReportList.Add(bookingReport);
+                }
+            }
+            return bookingReportList;
+        }
+
     }
 }
