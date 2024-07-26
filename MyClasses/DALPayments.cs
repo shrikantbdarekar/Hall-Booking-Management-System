@@ -124,5 +124,38 @@ namespace HallBookingManagementSystem.MyClasses
                 cmd.ExecuteNonQuery();
             }
         }
+
+        // Get Collection Report
+        public List<CollectionReport> GetCollectionReport()
+        {
+            List<CollectionReport> collectionReportList = new List<CollectionReport>();
+
+            string query = "Select P.PaymentId,P.PaymentDate,B.EventName,C.CustomerName,P.Remark,P.PaymentAmount from Payments P " +
+                "Left Outer Join EventBookings B On P.EventBookingId = B.EventBookingId " +
+                "Left Outer Join Customers C On B.CustomerId = C.CustomerId";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    CollectionReport collectionReport = new CollectionReport
+                    {
+                        PaymentId = Convert.ToInt32(reader["PaymentId"]),
+                        PaymentDate = Convert.ToDateTime(reader["PaymentDate"]),
+                        EventName = reader["EventName"].ToString(),
+                        CustomerName = reader["CustomerName"].ToString(),
+                        Remark = reader["Remark"].ToString(),
+                        PaymentAmount = Convert.ToDecimal(reader["PaymentAmount"])
+                    };
+                    collectionReportList.Add(collectionReport);
+                }
+            }
+            return collectionReportList;
+        }
+
+
     }
 }

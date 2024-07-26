@@ -21,14 +21,15 @@ namespace HallBookingManagementSystem.Reports
         private void FormReportPaymentCollection_Load(object sender, EventArgs e)
         {
             DALVenueSettings DALVenueSetting = new DALVenueSettings();
-            //DALCustomers DALCustomerObj = new DALCustomers();
+            DALPayments DALPayment = new DALPayments();
 
             VenueSetting VenueSettingObj = DALVenueSetting.GetVenueSettingById(Properties.Settings.Default.VenueId);
-            //List<Customer> customers = DALCustomerObj.GetAllCustomers();
+            List<CollectionReport> customers = DALPayment.GetCollectionReport();
 
             CrystalReportPaymentCollection rptObj = new CrystalReportPaymentCollection();
             // First: set DataSource for report document
-            //rptObj.SetDataSource(customers);
+            rptObj.SetDataSource(customers);
+            
             // Second: Add values for report parameters.
             rptObj.ParameterFields["VenueName"].CurrentValues.AddValue(VenueSettingObj.VenueName);
             rptObj.ParameterFields["VenueAddress"].CurrentValues.AddValue(VenueSettingObj.VenueAddress);

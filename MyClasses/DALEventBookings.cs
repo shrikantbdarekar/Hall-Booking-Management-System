@@ -270,5 +270,38 @@ namespace HallBookingManagementSystem.MyClasses
             return bookingReportList;
         }
 
+        // Get Due Report
+        public List<DueReport> GetDueReport()
+        {
+            List<DueReport> bookingReportList = new List<DueReport>();
+
+            string query = "Select B.EventBookingId,B.EventDate,B.EventName,C.CustomerName,C.MobileNumber,"+
+                "B.FinalAmount,B.ReceivedAmount,(B.FinalAmount-B.ReceivedAmount) DueAmount "+
+                "From EventBookings B Left Outer Join Customers C On B.CustomerId = C.CustomerId";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    DueReport dueReport = new DueReport
+                    {
+                        EventBookingId = Convert.ToInt32(reader["EventBookingId"]),
+                        EventDate = Convert.ToDateTime(reader["EventDate"]),
+                        EventName = reader["EventName"].ToString(),
+                        CustomerName = reader["CustomerName"].ToString(),
+                        MobileNumber = reader["MobileNumber"].ToString(),
+                        FinalAmount = Convert.ToDecimal(reader["FinalAmount"]),
+                        ReceivedAmount = Convert.ToDecimal(reader["ReceivedAmount"]),
+                        DueAmount = Convert.ToDecimal(reader["DueAmount"])
+                    };
+                    bookingReportList.Add(dueReport);
+                }
+            }
+            return bookingReportList;
+        }
+
     }
 }

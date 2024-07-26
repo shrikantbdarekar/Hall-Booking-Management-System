@@ -17,4 +17,14 @@ namespace HallBookingManagementSystem.MyClasses
         public string Remark { get; set; }
     }
 
+    public class CollectionReport
+    {
+        public int PaymentId { get; set; }
+        public DateTime PaymentDate { get; set; }
+        public string EventName { get; set; }
+        public string CustomerName { get; set; }
+        public string Remark { get; set; }
+        public decimal PaymentAmount { get; set; }
+    }
+
 }

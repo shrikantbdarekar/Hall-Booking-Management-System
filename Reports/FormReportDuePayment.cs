@@ -21,14 +21,16 @@ namespace HallBookingManagementSystem.Reports
         private void FormReportDuePayment_Load(object sender, EventArgs e)
         {
             DALVenueSettings DALVenueSetting = new DALVenueSettings();
-            //DALCustomers DALCustomerObj = new DALCustomers();
+            DALEventBookings DALEventBooking = new DALEventBookings();
 
             VenueSetting VenueSettingObj = DALVenueSetting.GetVenueSettingById(Properties.Settings.Default.VenueId);
-            //List<Customer> customers = DALCustomerObj.GetAllCustomers();
+            List<DueReport> dueReport = DALEventBooking.GetDueReport();
 
             CrystalReportDuePayments rptObj = new CrystalReportDuePayments();
+            
             // First: set DataSource for report document
-            //rptObj.SetDataSource(customers);
+            rptObj.SetDataSource(dueReport);
+            
             // Second: Add values for report parameters.
             rptObj.ParameterFields["VenueName"].CurrentValues.AddValue(VenueSettingObj.VenueName);
             rptObj.ParameterFields["VenueAddress"].CurrentValues.AddValue(VenueSettingObj.VenueAddress);
