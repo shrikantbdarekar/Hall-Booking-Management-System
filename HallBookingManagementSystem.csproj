@@ -384,22 +384,22 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\hbm001 login.png" />
-    <Content Include="Images\hbm002 menu.png" />
-    <Content Include="Images\hbm003 venue.png" />
-    <Content Include="Images\hbm004 booking type.png" />
-    <Content Include="Images\hbm005 event type.png" />
-    <Content Include="Images\hbm006 hall detail.png" />
-    <Content Include="Images\hbm007 user.png" />
-    <Content Include="Images\hbm008 booking package.png" />
-    <Content Include="Images\hbm009 customer.png" />
-    <Content Include="Images\hbm010 event booking.png" />
-    <Content Include="Images\hbm011 print.png" />
-    <Content Include="Images\hbm012 print.png" />
-    <Content Include="Images\hbm013 customer.png" />
-    <Content Include="Images\hbm014 booking.png" />
-    <Content Include="Images\hbm015 payment collection.png" />
-    <Content Include="Images\hbm016 due payment.png" />
+    <Content Include="Images\hbm001_login.png" />
+    <Content Include="Images\hbm002_menu.png" />
+    <Content Include="Images\hbm003_venue.png" />
+    <Content Include="Images\hbm004_booking_type.png" />
+    <Content Include="Images\hbm005_event_type.png" />
+    <Content Include="Images\hbm006_hall_detail.png" />
+    <Content Include="Images\hbm007_user.png" />
+    <Content Include="Images\hbm008_booking_package.png" />
+    <Content Include="Images\hbm009_customer.png" />
+    <Content Include="Images\hbm010_event_booking.png" />
+    <Content Include="Images\hbm011_print.png" />
+    <Content Include="Images\hbm012_print.png" />
+    <Content Include="Images\hbm013_customer.png" />
+    <Content Include="Images\hbm014_booking.png" />
+    <Content Include="Images\hbm015_payment_collection.png" />
+    <Content Include="Images\hbm016_due_payment.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
