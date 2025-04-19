@@ -6,9 +6,9 @@
       <Value Profile="(Default)">Hall Booking Management System</Value>
     </Setting>
     <Setting Name="DesignedDvelopedBy" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Mr. Mark Zuckerberg
-Mr. Sundar Pichai
-Mr. Bill Gates</Value>
+      <Value Profile="(Default)">Mr. Zuckerberg
+Mr. Pichai
+Mr. Gates</Value>
     </Setting>
     <Setting Name="ConnestionStringFull" Type="System.String" Scope="User">
       <Value Profile="(Default)">Server=.\\sqlexpress19;Database=HallBookingDb;User Id=sa;Password=sqlexpress@19;</Value>
