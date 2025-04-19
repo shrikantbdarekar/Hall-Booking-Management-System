@@ -59,7 +59,7 @@ The **Hall Booking Management System** provides a comprehensive solution for man
 
 
 ## Screenshots
-![Login](Images/hbm001 login.png)
+![Login](Images/hbm001_login.png)
 ![Menu](Images/002_emp_login.png)
 ![Venue](Images/003_emp_menu.png)
 ![Booking Type](Images/004_emp_users.png)
