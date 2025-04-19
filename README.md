@@ -58,6 +58,24 @@ Crystal Reports is integrated to provide robust reporting capabilities. Users ca
 The **Hall Booking Management System** provides a comprehensive solution for managing hall reservations efficiently. By leveraging **Visual Studio 2022, C#, SQL Express 2022, and Crystal Reports**, the system ensures a robust and scalable platform for hall booking management.
 
 
+## Screenshots
+![Login](Images/hbm001 login.png)
+![Menu](Images/002_emp_login.png)
+![Venue](Images/003_emp_menu.png)
+![Booking Type](Images/004_emp_users.png)
+![Evnet Type](Images/005_emp_change_password.png)
+![Hall Detail](Images/006_empl_list.png)
+![Users](Images/007_emp_edit.png)
+![booking Package](Images/008_emp_import_attendace.png)
+![Customer](Images/009_emp_manage_missing_log.png)
+![Event Booking](Images/010_emp_month_hours.png)
+![Print List](Images/011_emp_salary_report.png)
+![Receipt](Images/008_emp_import_attendace.png)
+![Customer Report](Images/009_emp_manage_missing_log.png)
+![Booking Report](Images/010_emp_month_hours.png)
+![Collection Report](Images/011_emp_salary_report.png)
+![Due Report](Images/011_emp_salary_report.png)
+
 # Apply For 
 
 ### Online C# Project Workshop For College Students
